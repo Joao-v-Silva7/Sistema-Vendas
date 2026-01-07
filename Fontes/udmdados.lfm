@@ -1,0 +1,106 @@
+object DmDados: TDmDados
+  OldCreateOrder = False
+  Height = 423
+  HorizontalOffset = 313
+  VerticalOffset = 250
+  Width = 588
+  object QRLogo: TZQuery
+    Connection = conexaoDB
+    UpdateObject = updImgLogo
+    Active = True
+    SQL.Strings = (
+      'SELECT * FROM IMG_LOGOS'
+    )
+    Params = <>
+    Left = 152
+    Top = 112
+    object QRLogoID: TZIntegerField
+      FieldKind = fkData
+      FieldName = 'ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object QRLogoNOME_EMPRESA: TZRawStringField
+      FieldKind = fkData
+      FieldName = 'NOME_EMPRESA'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+    object QRLogoLOGOS_IMGS: TZBlobField
+      FieldKind = fkData
+      FieldName = 'LOGOS_IMGS'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object conexaoDB: TZConnection
+    ControlsCodePage = cCP_UTF8
+    Properties.Strings = (
+      'RawStringEncoding=DB_CP'
+    )
+    AutoCommit = False
+    Connected = True
+    DisableSavepoints = False
+    HostName = 'localhost'
+    Port = 0
+    Database = 'C:\MeusProjetos\Dados.fdb'
+    User = 'SYSDBA'
+    Password = 'root'
+    Protocol = 'firebird'
+    LibraryLocation = 'C:\Program Files\Firebird\Firebird_5_0\fbclient.dll'
+    Left = 240
+    Top = 64
+  end
+  object updImgLogo: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM img_logos'
+      'WHERE'
+      '  img_logos.ID = :OLD_ID'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO img_logos'
+      '  (ID, NOME_EMPRESA, LOGOS_IMGS)'
+      'VALUES'
+      '  (:ID, :NOME_EMPRESA, :LOGOS_IMGS)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE img_logos SET'
+      '  ID = :ID,'
+      '  NOME_EMPRESA = :NOME_EMPRESA,'
+      '  LOGOS_IMGS = :LOGOS_IMGS'
+      'WHERE'
+      '  img_logos.ID = :OLD_ID'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    Left = 200
+    Top = 176
+    ParamData = <    
+      item
+        Name = 'ID'
+      end    
+      item
+        Name = 'NOME_EMPRESA'
+      end    
+      item
+        Name = 'LOGOS_IMGS'
+      end    
+      item
+        Name = 'OLD_ID'
+      end>
+  end
+  object Ds_logo: TDataSource
+    DataSet = QRLogo
+    Left = 304
+    Top = 184
+  end
+end

@@ -10,20 +10,19 @@ uses
   athreads,
   {$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, UPrincipal
-  { you can add units after this };
+  Forms, UPrincipal, zcomponent, UDMDados;
 
 {$R *.res}
 
 begin
   RequireDerivedFormResource:=True;
-  Application.Title:='project1';
   Application.Scaled:=True;
   {$PUSH}{$WARN 5044 OFF}
   Application.MainFormOnTaskbar:=True;
   {$POP}
   Application.Initialize;
   Application.CreateForm(TformPrincipal, formPrincipal);
+  Application.CreateForm(TDmDados, DmDados);
   Application.Run;
 end.
 
