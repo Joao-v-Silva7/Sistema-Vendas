@@ -9,7 +9,7 @@
         <Filename Value="Projeto_pdv.lpr"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="41"/>
       </Unit>
       <Unit>
         <Filename Value="uprincipal.pas"/>
@@ -18,10 +18,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UPrincipal"/>
-        <IsVisibleTab Value="True"/>
-        <TopLine Value="119"/>
-        <CursorPos X="8" Y="136"/>
-        <UsageCount Value="22"/>
+        <TopLine Value="195"/>
+        <CursorPos X="31" Y="223"/>
+        <UsageCount Value="41"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -32,131 +31,148 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="UDMDados"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="2"/>
         <CursorPos X="17"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="41"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Fontes\ufuncionarios.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmFuncionarios"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UFuncionarios"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="44"/>
+        <CursorPos X="22" Y="77"/>
+        <UsageCount Value="26"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
     </Units>
-    <JumpHistory HistoryIndex="28">
+    <JumpHistory HistoryIndex="29">
       <Position>
         <Filename Value="uprincipal.pas"/>
-        <Caret Line="112" Column="3" TopLine="77"/>
-      </Position>
-      <Position>
-        <Filename Value="uprincipal.pas"/>
-        <Caret Line="133" Column="3" TopLine="115"/>
+        <Caret Line="222" Column="13" TopLine="213"/>
       </Position>
       <Position>
         <Filename Value="uprincipal.pas"/>
-        <Caret Line="112" Column="4" TopLine="93"/>
+        <Caret Line="12" Column="27" TopLine="9"/>
       </Position>
       <Position>
         <Filename Value="uprincipal.pas"/>
-        <Caret Line="111" Column="20" TopLine="93"/>
-      </Position>
-      <Position>
-        <Filename Value="Fontes\udmdados.pas"/>
+        <Caret Line="222" Column="44" TopLine="204"/>
       </Position>
       <Position>
         <Filename Value="uprincipal.pas"/>
-        <Caret Line="111" Column="51" TopLine="94"/>
+        <Caret Line="223" Column="29" TopLine="205"/>
       </Position>
       <Position>
-        <Filename Value="Fontes\udmdados.pas"/>
+        <Filename Value="Fontes\ufuncionarios.pas"/>
+        <Caret Column="4"/>
       </Position>
       <Position>
-        <Filename Value="uprincipal.pas"/>
-        <Caret Line="112" Column="10" TopLine="94"/>
+        <Filename Value="Fontes\ufuncionarios.pas"/>
+        <Caret Line="34" Column="3"/>
       </Position>
       <Position>
-        <Filename Value="uprincipal.pas"/>
-        <Caret Line="113" Column="24" TopLine="87"/>
+        <Filename Value="Fontes\ufuncionarios.pas"/>
+        <Caret Line="35" Column="3"/>
       </Position>
       <Position>
-        <Filename Value="uprincipal.pas"/>
-        <Caret Line="131" Column="9" TopLine="105"/>
+        <Filename Value="Fontes\ufuncionarios.pas"/>
+        <Caret Line="34" Column="3"/>
       </Position>
       <Position>
-        <Filename Value="uprincipal.pas"/>
-        <Caret Line="171" Column="64" TopLine="146"/>
+        <Filename Value="Fontes\ufuncionarios.pas"/>
+        <Caret Line="35" Column="3"/>
       </Position>
       <Position>
-        <Filename Value="uprincipal.pas"/>
-        <Caret Line="176" Column="12" TopLine="146"/>
+        <Filename Value="Fontes\ufuncionarios.pas"/>
+        <Caret Line="37" Column="3" TopLine="2"/>
       </Position>
       <Position>
-        <Filename Value="uprincipal.pas"/>
-        <Caret Line="114" Column="51" TopLine="102"/>
+        <Filename Value="Fontes\ufuncionarios.pas"/>
+        <Caret Line="38" Column="3" TopLine="3"/>
       </Position>
       <Position>
-        <Filename Value="uprincipal.pas"/>
-        <Caret Line="132" Column="15" TopLine="107"/>
+        <Filename Value="Fontes\ufuncionarios.pas"/>
+        <Caret Line="39" Column="3" TopLine="4"/>
       </Position>
       <Position>
-        <Filename Value="uprincipal.pas"/>
-        <Caret Line="172" Column="8" TopLine="154"/>
+        <Filename Value="Fontes\ufuncionarios.pas"/>
+        <Caret Line="40" Column="3" TopLine="5"/>
       </Position>
       <Position>
-        <Filename Value="uprincipal.pas"/>
-        <Caret Line="164" Column="71" TopLine="154"/>
+        <Filename Value="Fontes\ufuncionarios.pas"/>
+        <Caret Line="41" Column="3" TopLine="6"/>
       </Position>
       <Position>
-        <Filename Value="uprincipal.pas"/>
-        <Caret Line="126" Column="48" TopLine="104"/>
+        <Filename Value="Fontes\ufuncionarios.pas"/>
+        <Caret Line="42" Column="3" TopLine="7"/>
       </Position>
       <Position>
-        <Filename Value="uprincipal.pas"/>
-        <Caret Line="172" Column="8" TopLine="154"/>
+        <Filename Value="Fontes\ufuncionarios.pas"/>
+        <Caret Line="43" Column="3" TopLine="8"/>
       </Position>
       <Position>
-        <Filename Value="uprincipal.pas"/>
-        <Caret Line="15" Column="83"/>
+        <Filename Value="Fontes\ufuncionarios.pas"/>
+        <Caret Line="44" Column="3" TopLine="9"/>
       </Position>
       <Position>
-        <Filename Value="uprincipal.pas"/>
-        <Caret Line="10" Column="6"/>
+        <Filename Value="Fontes\ufuncionarios.pas"/>
+        <Caret Line="45" Column="3" TopLine="10"/>
       </Position>
       <Position>
-        <Filename Value="uprincipal.pas"/>
-        <Caret Line="132" Column="41" TopLine="115"/>
+        <Filename Value="Fontes\ufuncionarios.pas"/>
+        <Caret Line="46" Column="3" TopLine="11"/>
       </Position>
       <Position>
-        <Filename Value="uprincipal.pas"/>
-        <Caret Line="126" Column="55" TopLine="93"/>
+        <Filename Value="Fontes\ufuncionarios.pas"/>
+        <Caret Line="51" Column="3" TopLine="16"/>
       </Position>
       <Position>
-        <Filename Value="Fontes\udmdados.pas"/>
-        <Caret Column="17"/>
+        <Filename Value="Fontes\ufuncionarios.pas"/>
+        <Caret Line="50" Column="3" TopLine="16"/>
       </Position>
       <Position>
-        <Filename Value="uprincipal.pas"/>
-        <Caret Line="179" Column="71" TopLine="165"/>
+        <Filename Value="Fontes\ufuncionarios.pas"/>
+        <Caret Line="52" Column="3" TopLine="17"/>
       </Position>
       <Position>
-        <Filename Value="Fontes\udmdados.pas"/>
-        <Caret Column="17"/>
+        <Filename Value="Fontes\ufuncionarios.pas"/>
+        <Caret Line="27" Column="3" TopLine="27"/>
       </Position>
       <Position>
-        <Filename Value="uprincipal.pas"/>
-        <Caret Line="170" Column="63" TopLine="156"/>
+        <Filename Value="Fontes\ufuncionarios.pas"/>
+        <Caret Line="60" Column="19" TopLine="26"/>
       </Position>
       <Position>
-        <Filename Value="uprincipal.pas"/>
-        <Caret Line="112" Column="55" TopLine="106"/>
+        <Filename Value="Fontes\ufuncionarios.pas"/>
+        <Caret Line="59" Column="3" TopLine="26"/>
       </Position>
       <Position>
-        <Filename Value="uprincipal.pas"/>
-        <Caret Line="133" Column="83" TopLine="106"/>
+        <Filename Value="Fontes\ufuncionarios.pas"/>
+        <Caret Line="68" Column="19" TopLine="42"/>
       </Position>
       <Position>
-        <Filename Value="uprincipal.pas"/>
-        <Caret Line="136" Column="8" TopLine="118"/>
+        <Filename Value="Fontes\ufuncionarios.pas"/>
+        <Caret Line="67" Column="3" TopLine="43"/>
       </Position>
       <Position>
-        <Filename Value="Fontes\udmdados.pas"/>
-        <Caret Column="17"/>
+        <Filename Value="Fontes\ufuncionarios.pas"/>
+        <Caret Line="70" Column="7" TopLine="43"/>
+      </Position>
+      <Position>
+        <Filename Value="Fontes\ufuncionarios.pas"/>
+        <Caret Line="63" Column="22" TopLine="44"/>
+      </Position>
+      <Position>
+        <Filename Value="Fontes\ufuncionarios.pas"/>
+        <Caret Line="72" Column="18" TopLine="44"/>
       </Position>
     </JumpHistory>
     <RunParams>

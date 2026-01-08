@@ -62,6 +62,14 @@
         <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="UDMDados"/>
       </Unit>
+      <Unit>
+        <Filename Value="Fontes\ufuncionarios.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmFuncionarios"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UFuncionarios"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
