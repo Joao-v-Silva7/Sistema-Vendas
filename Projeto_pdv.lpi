@@ -105,6 +105,9 @@
       <Item>
         <Name Value="EFOpenError"/>
       </Item>
+      <Item>
+        <Name Value="EInvalidOperation"/>
+      </Item>
     </Exceptions>
   </Debugging>
 </CONFIG>

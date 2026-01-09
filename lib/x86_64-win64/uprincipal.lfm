@@ -7826,12 +7826,12 @@ object formPrincipal: TformPrincipal
   end
   object Panel4: TPanel
     Left = 24
-    Height = 581
+    Height = 544
     Top = 152
     Width = 314
     BevelInner = bvRaised
     BevelOuter = bvLowered
-    ClientHeight = 581
+    ClientHeight = 544
     ClientWidth = 314
     TabOrder = 3
     OnClick = Panel4Click
@@ -8237,7 +8237,7 @@ object formPrincipal: TformPrincipal
     end
     object SpeedButton6: TSpeedButton
       Cursor = crHandPoint
-      Left = 40
+      Left = 42
       Height = 46
       Top = 488
       Width = 232

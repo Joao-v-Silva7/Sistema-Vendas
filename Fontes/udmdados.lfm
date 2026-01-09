@@ -1,9 +1,9 @@
 object DmDados: TDmDados
   OldCreateOrder = False
-  Height = 423
+  Height = 511
   HorizontalOffset = 313
   VerticalOffset = 250
-  Width = 588
+  Width = 659
   object QRLogo: TZQuery
     Connection = conexaoDB
     UpdateObject = updImgLogo
@@ -23,20 +23,10 @@ object DmDados: TDmDados
       ReadOnly = False
       Required = False
     end
-    object QRLogoNOME_EMPRESA: TZRawStringField
+    object QRLogoLOGOS_IMG: TZBlobField
       FieldKind = fkData
-      FieldName = 'NOME_EMPRESA'
+      FieldName = 'LOGOS_IMG'
       Index = 1
-      LookupCache = False
-      ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
-      Required = False
-      Size = 100
-    end
-    object QRLogoLOGOS_IMGS: TZBlobField
-      FieldKind = fkData
-      FieldName = 'LOGOS_IMGS'
-      Index = 2
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -52,8 +42,8 @@ object DmDados: TDmDados
     Connected = True
     DisableSavepoints = False
     HostName = 'localhost'
-    Port = 0
-    Database = 'C:\MeusProjetos\Dados.fdb'
+    Port = 3050
+    Database = 'C:\Database\DATABASE.FDB'
     User = 'SYSDBA'
     Password = 'root'
     Protocol = 'firebird'
@@ -63,23 +53,22 @@ object DmDados: TDmDados
   end
   object updImgLogo: TZUpdateSQL
     DeleteSQL.Strings = (
-      'DELETE FROM img_logos'
+      'DELETE FROM IMG_LOGOS'
       'WHERE'
-      '  img_logos.ID = :OLD_ID'
+      '  IMG_LOGOS.ID = :OLD_ID'
     )
     InsertSQL.Strings = (
-      'INSERT INTO img_logos'
-      '  (ID, NOME_EMPRESA, LOGOS_IMGS)'
+      'INSERT INTO IMG_LOGOS'
+      '  (ID, LOGOS_IMG)'
       'VALUES'
-      '  (:ID, :NOME_EMPRESA, :LOGOS_IMGS)'
+      '  (:ID, :LOGOS_IMG)'
     )
     ModifySQL.Strings = (
-      'UPDATE img_logos SET'
+      'UPDATE IMG_LOGOS SET'
       '  ID = :ID,'
-      '  NOME_EMPRESA = :NOME_EMPRESA,'
-      '  LOGOS_IMGS = :LOGOS_IMGS'
+      '  LOGOS_IMG = :LOGOS_IMG'
       'WHERE'
-      '  img_logos.ID = :OLD_ID'
+      '  IMG_LOGOS.ID = :OLD_ID'
     )
     UseSequenceFieldForRefreshSQL = False
     Left = 200
@@ -89,10 +78,7 @@ object DmDados: TDmDados
         Name = 'ID'
       end    
       item
-        Name = 'NOME_EMPRESA'
-      end    
-      item
-        Name = 'LOGOS_IMGS'
+        Name = 'LOGOS_IMG'
       end    
       item
         Name = 'OLD_ID'
@@ -100,7 +86,293 @@ object DmDados: TDmDados
   end
   object Ds_logo: TDataSource
     DataSet = QRLogo
+    OnDataChange = Ds_logoDataChange
     Left = 304
     Top = 184
+  end
+  object QFuncionarios: TZQuery
+    Connection = conexaoDB
+    UpdateObject = updFuncionarios
+    SQL.Strings = (
+      'select * from funcionarios'
+    )
+    Params = <>
+    Left = 176
+    Top = 272
+    object QFuncionariosID: TZIntegerField
+      FieldKind = fkData
+      FieldName = 'ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object QFuncionariosNOME: TZRawStringField
+      FieldKind = fkData
+      FieldName = 'NOME'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object QFuncionariosENDERECO: TZRawStringField
+      FieldKind = fkData
+      FieldName = 'ENDERECO'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 90
+    end
+    object QFuncionariosNUMERO: TZInt64Field
+      FieldKind = fkData
+      FieldName = 'NUMERO'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object QFuncionariosBAIRRO: TZRawStringField
+      FieldKind = fkData
+      FieldName = 'BAIRRO'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 50
+    end
+    object QFuncionariosCEP: TZRawStringField
+      FieldKind = fkData
+      FieldName = 'CEP'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object QFuncionariosCIDADE: TZRawStringField
+      FieldKind = fkData
+      FieldName = 'CIDADE'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object QFuncionariosESTADO: TZRawStringField
+      FieldKind = fkData
+      FieldName = 'ESTADO'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object QFuncionariosTELEFONE: TZRawStringField
+      FieldKind = fkData
+      FieldName = 'TELEFONE'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object QFuncionariosRG: TZRawStringField
+      FieldKind = fkData
+      FieldName = 'RG'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object QFuncionariosCPF: TZRawStringField
+      FieldKind = fkData
+      FieldName = 'CPF'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object QFuncionariosCTPS: TZRawStringField
+      FieldKind = fkData
+      FieldName = 'CTPS'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object QFuncionariosCARGO: TZRawStringField
+      FieldKind = fkData
+      FieldName = 'CARGO'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object QFuncionariosSEXO: TZRawStringField
+      FieldKind = fkData
+      FieldName = 'SEXO'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object QFuncionariosESTADO_CIVIL: TZRawStringField
+      FieldKind = fkData
+      FieldName = 'ESTADO_CIVIL'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object QFuncionariosSENHA: TZRawStringField
+      FieldKind = fkData
+      FieldName = 'SENHA'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 35
+    end
+    object QFuncionariosNIVEL: TZIntegerField
+      FieldKind = fkData
+      FieldName = 'NIVEL'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object QFuncionariosFOTOS: TZRawStringField
+      FieldKind = fkData
+      FieldName = 'FOTOS'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 70
+    end
+  end
+  object Ds_Funcionarios: TDataSource
+    DataSet = QFuncionarios
+    Left = 352
+    Top = 336
+  end
+  object updFuncionarios: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM funcionarios'
+      'WHERE'
+      '  funcionarios.ID = :OLD_ID'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO funcionarios'
+      '  (ID, NOME, ENDERECO, NUMERO, BAIRRO, CEP, CIDADE, ESTADO, TELEFONE, RG, '
+      '   CPF, CTPS, CARGO, SEXO, ESTADO_CIVIL, SENHA, NIVEL, FOTOS)'
+      'VALUES'
+      '  (:ID, :NOME, :ENDERECO, :NUMERO, :BAIRRO, :CEP, :CIDADE, :ESTADO, :TELEFONE, '
+      '   :RG, :CPF, :CTPS, :CARGO, :SEXO, :ESTADO_CIVIL, :SENHA, :NIVEL, :FOTOS)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE funcionarios SET'
+      '  ID = :ID,'
+      '  NOME = :NOME,'
+      '  ENDERECO = :ENDERECO,'
+      '  NUMERO = :NUMERO,'
+      '  BAIRRO = :BAIRRO,'
+      '  CEP = :CEP,'
+      '  CIDADE = :CIDADE,'
+      '  ESTADO = :ESTADO,'
+      '  TELEFONE = :TELEFONE,'
+      '  RG = :RG,'
+      '  CPF = :CPF,'
+      '  CTPS = :CTPS,'
+      '  CARGO = :CARGO,'
+      '  SEXO = :SEXO,'
+      '  ESTADO_CIVIL = :ESTADO_CIVIL,'
+      '  SENHA = :SENHA,'
+      '  NIVEL = :NIVEL,'
+      '  FOTOS = :FOTOS'
+      'WHERE'
+      '  funcionarios.ID = :OLD_ID'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    Left = 192
+    Top = 352
+    ParamData = <    
+      item
+        Name = 'ID'
+      end    
+      item
+        Name = 'NOME'
+      end    
+      item
+        Name = 'ENDERECO'
+      end    
+      item
+        Name = 'NUMERO'
+      end    
+      item
+        Name = 'BAIRRO'
+      end    
+      item
+        Name = 'CEP'
+      end    
+      item
+        Name = 'CIDADE'
+      end    
+      item
+        Name = 'ESTADO'
+      end    
+      item
+        Name = 'TELEFONE'
+      end    
+      item
+        Name = 'RG'
+      end    
+      item
+        Name = 'CPF'
+      end    
+      item
+        Name = 'CTPS'
+      end    
+      item
+        Name = 'CARGO'
+      end    
+      item
+        Name = 'SEXO'
+      end    
+      item
+        Name = 'ESTADO_CIVIL'
+      end    
+      item
+        Name = 'SENHA'
+      end    
+      item
+        Name = 'NIVEL'
+      end    
+      item
+        Name = 'FOTOS'
+      end    
+      item
+        Name = 'OLD_ID'
+      end>
   end
 end

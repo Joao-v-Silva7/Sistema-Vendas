@@ -35,6 +35,7 @@ type
     procedure Botao_InsertClick(Sender: TObject);
     procedure Botao_SalvarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure FormKeyPress(Sender: TObject; var Key: char);
     procedure FormShow(Sender: TObject);
   private
 
@@ -56,6 +57,17 @@ begin
 
 end;
 
+procedure TFrmFuncionarios.FormKeyPress(Sender: TObject; var Key: char);
+begin
+  if key = #27 then
+  begin
+    if PageControl.ActivePageIndex = 0 then
+    close
+    else
+      Botao_Cancelar.Click;
+  end;
+end;
+
 procedure TFrmFuncionarios.Botao_SalvarClick(Sender: TObject);
 begin
   TabConsultas.TabVisible:= True;
@@ -65,23 +77,23 @@ end;
 
 procedure TFrmFuncionarios.Botao_CancelarClick(Sender: TObject);
 begin
-  TabConsultas.TabVisible:= False;
-  TabCadastros.TabVisible:= True;
+  TabConsultas.TabVisible:= True;
+  TabCadastros.TabVisible:= False;
   DBGrid.SetFocus;
 end;
 
 procedure TFrmFuncionarios.Botao_AlterarClick(Sender: TObject);
 begin
-  TabConsultas.TabVisible:= True;
-  TabCadastros.TabVisible:= False;
+  TabConsultas.TabVisible:= False;
+  TabCadastros.TabVisible:= True;
   //DBEdit1.SetFocus;
 end;
 
 procedure TFrmFuncionarios.Botao_InsertClick(Sender: TObject);
 begin
-  TabConsultas.TabVisible:= True;
-  TabCadastros.TabVisible:= False;
-  DBGrid.SetFocus;
+  TabConsultas.TabVisible:= False;
+  TabCadastros.TabVisible:= True;
+  //DBGrid.SetFocus;
 end;
 
 procedure TFrmFuncionarios.FormShow(Sender: TObject);

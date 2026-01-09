@@ -137,7 +137,7 @@ begin
   try
     // Carrega o arquivo selecionado para o campo BLOB do banco
       // Usamos TBlobField para ter acesso ao método LoadFromFile
-      TBlobField(DmDados.QRLogo.FieldByName('LOGOS_IMGS')).LoadFromFile(AbreLogos.FileName);
+      TBlobField(DmDados.QRLogo.FieldByName('LOGOS_IMG')).LoadFromFile(AbreLogos.FileName);
 
       //salva no banco de dados
       DmDados.QRLogo.Post;
@@ -196,12 +196,12 @@ begin
   if not DmDados.QRLogo.Active then
      DmDados.QRLogo.Open;
     //verfica se existe imagem no banco
-  if not DmDados.QRLogo.FieldByName('LOGOS_IMGS').IsNull then
+  if not DmDados.QRLogo.FieldByName('LOGOS_IMG').IsNull then
   begin
     MS := TMemoryStream.Create;
     try
         //joga o conteudo do binario do campo para a memória (stream)
-       TBlobField(DmDados.QRLogo.FieldByName('LOGOS_IMGS')).SaveToStream(MS);
+       TBlobField(DmDados.QRLogo.FieldByName('LOGOS_IMG')).SaveToStream(MS);
        MS.Position:=0;
 
        FotosLogos.Picture.LoadFromStream(MS);
@@ -271,7 +271,7 @@ begin
   try
     // Carrega o arquivo selecionado para o campo BLOB do banco
       // Usamos TBlobField para ter acesso ao método LoadFromFile
-      TBlobField(DmDados.QRLogo.FieldByName('LOGOS_IMGS')).LoadFromFile(AbreLogos.FileName);
+      TBlobField(DmDados.QRLogo.FieldByName('LOGOS_IMG')).LoadFromFile(AbreLogos.FileName);
 
       //salva no banco de dados
       DmDados.QRLogo.Post;
@@ -295,7 +295,12 @@ end;
 
 procedure TformPrincipal.SpeedButton6Click(Sender: TObject);
 begin
+  if key = #27 then
+  begin
+  if MessageDlg('Confirmação', 'Você tem certeza que deseja fechar o sistema?', mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+  else
   Application.Terminate;
+  end;
 end;
 
 procedure TformPrincipal.SpeedButton7Click(Sender: TObject);

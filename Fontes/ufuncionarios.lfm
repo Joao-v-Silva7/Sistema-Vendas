@@ -13,6 +13,7 @@ object FrmFuncionarios: TFrmFuncionarios
   Position = poMainFormCenter
   LCLVersion = '4.4.0.0'
   OnCreate = FormCreate
+  OnKeyPress = FormKeyPress
   OnShow = FormShow
   object PanelPesquisa: TPanel
     Left = 768
@@ -50,7 +51,7 @@ object FrmFuncionarios: TFrmFuncionarios
   end
   object PageControl: TPageControl
     Left = 32
-    Height = 504
+    Height = 505
     Top = 88
     Width = 728
     ActivePage = TabConsultas
@@ -58,7 +59,7 @@ object FrmFuncionarios: TFrmFuncionarios
     TabOrder = 1
     object TabConsultas: TTabSheet
       Caption = 'Consultas'
-      ClientHeight = 476
+      ClientHeight = 477
       ClientWidth = 720
       object PanelPesquisa1: TPanel
         Left = 8
@@ -322,17 +323,17 @@ object FrmFuncionarios: TFrmFuncionarios
     end
     object TabCadastros: TTabSheet
       Caption = 'Cadastros'
-      ClientHeight = 476
+      ClientHeight = 477
       ClientWidth = 720
       object PanelPesquisa2: TPanel
         Left = 8
         Height = 56
         Top = 416
-        Width = 664
+        Width = 712
         BevelInner = bvRaised
         BevelOuter = bvLowered
         ClientHeight = 56
-        ClientWidth = 664
+        ClientWidth = 712
         Font.CharSet = ANSI_CHARSET
         Font.Height = -13
         Font.Pitch = fpVariable
@@ -340,8 +341,8 @@ object FrmFuncionarios: TFrmFuncionarios
         ParentFont = False
         TabOrder = 0
         object Botao_Salvar: TSpeedButton
-          Left = 16
-          Height = 40
+          Left = 9
+          Height = 41
           Top = 8
           Width = 120
           Caption = 'Salvar Registros'
@@ -401,8 +402,8 @@ object FrmFuncionarios: TFrmFuncionarios
           OnClick = Botao_SalvarClick
         end
         object Botao_Cancelar: TSpeedButton
-          Left = 144
-          Height = 40
+          Left = 139
+          Height = 41
           Top = 8
           Width = 120
           Caption = 'Cancelar Registros'
@@ -477,8 +478,8 @@ object FrmFuncionarios: TFrmFuncionarios
           OnClick = Botao_CancelarClick
         end
         object Botao_Fotos: TSpeedButton
-          Left = 272
-          Height = 40
+          Left = 268
+          Height = 41
           Top = 8
           Width = 120
           Caption = 'Buscar Fotos'
